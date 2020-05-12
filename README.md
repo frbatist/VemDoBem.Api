@@ -11,7 +11,7 @@ No momento estão em desenvolvimento as seguintes funcionalidades:
 - Subscrição de usuário como voluntário da insitituição/evento;
 - Sistema de comunicação entre instituição e voluntário.
 
-Segue o mapeamento inicial das entidades e relacionamentos: 
+Segue o mapeamento inicial das entidades e relacionamentos (os atributos das entidades, poderão ser visualizadas no código): 
 
 ![Alt](Diagramas/MER_base.svg)
 
