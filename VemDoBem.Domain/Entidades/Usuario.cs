@@ -5,8 +5,8 @@ namespace VemDoBem.Domain.Entidades
 {
     public class Usuario : IdentityUser<long>
     {
-        public string Nome { get; set; }
-        public Endereco Endereco { get; set; }
-        public byte[] Foto { get; set; }
+        public string Nome { get; private set; }
+        public Endereco Endereco { get; private set; }
+        public byte[] Foto { get; private set; }
     }
 }
