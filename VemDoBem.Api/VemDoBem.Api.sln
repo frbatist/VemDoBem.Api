@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDoBem.Api", "VemDoBem.Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nucleo", "Nucleo", "{35888EE1-8DEC-4475-9B5E-93E6C090E152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDoBem.Domain", "..\VemDoBem.Domain\VemDoBem.Domain.csproj", "{77C5AE3F-9AB0-46AE-871A-911316160ADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDoBem.Domain", "..\VemDoBem.Domain\VemDoBem.Domain.csproj", "{77C5AE3F-9AB0-46AE-871A-911316160ADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDoBem.Infra", "..\VemDoBem.Infra\VemDoBem.Infra.csproj", "{24788328-FD39-42D0-8C3F-A9F5EA7C0BC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDoBem.Infra", "..\VemDoBem.Infra\VemDoBem.Infra.csproj", "{24788328-FD39-42D0-8C3F-A9F5EA7C0BC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDoBem.Testes", "..\VemDoBem.Testes\VemDoBem.Testes.csproj", "{E44CCCC1-B583-445B-A066-B45BAC545E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{24788328-FD39-42D0-8C3F-A9F5EA7C0BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24788328-FD39-42D0-8C3F-A9F5EA7C0BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24788328-FD39-42D0-8C3F-A9F5EA7C0BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44CCCC1-B583-445B-A066-B45BAC545E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44CCCC1-B583-445B-A066-B45BAC545E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44CCCC1-B583-445B-A066-B45BAC545E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44CCCC1-B583-445B-A066-B45BAC545E75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
