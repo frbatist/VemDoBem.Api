@@ -30,7 +30,7 @@ namespace VemDoBem.Domain.ObjetosDeValor
 
         private bool EnderecoInvalido(EnderecoDto enderecoDto)
         {
-            return string.IsNullOrEmpty(Cep) || string.IsNullOrEmpty(Rua) || string.IsNullOrEmpty(Uf) || string.IsNullOrEmpty(Municipio);
+            return string.IsNullOrEmpty(enderecoDto.Cep) || string.IsNullOrEmpty(enderecoDto.Rua) || string.IsNullOrEmpty(enderecoDto.Uf) || string.IsNullOrEmpty(enderecoDto.Municipio);
         }
     }
 }
