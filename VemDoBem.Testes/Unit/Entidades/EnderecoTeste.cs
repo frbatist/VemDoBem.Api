@@ -40,18 +40,21 @@ namespace VemDoBem.Testes.Unit.Entidades
 
         [Theory]
         [ClassData(typeof(EnderecoDtoDados))]
-        public void Endereco_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos(EnderecoDto enderecoDto)
+        public void Endereco_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos_obrigatorios(EnderecoDto enderecoDto)
         {
+            //Arrange
+            var mensagemErro = $"Endereço inválido: " +
+                    $"Cep: { enderecoDto.Cep ?? "*vazio*"}, " +
+                    $"Rua: { enderecoDto.Rua ?? "*vazio*"}, " +
+                    $"Uf: { enderecoDto.Uf ?? "*vazio*"}, " +
+                    $"Município: { enderecoDto.Municipio ?? "*vazio*"}.";
+
             //Act
             Action act = () => new Endereco(enderecoDto);
 
             //Assert
             act.Should().Throw<InvalidOperationException>()                
-                .WithMessage($"Endereço inválido: " +
-                    $"Cep: { enderecoDto.Cep ?? "*vazio*"}, " +
-                    $"Rua: { enderecoDto.Rua ?? "*vazio*"}, " +
-                    $"Uf: { enderecoDto.Uf ?? "*vazio*"}, " +
-                    $"Município: { enderecoDto.Municipio ?? "*vazio*"}.");
+                .WithMessage(mensagemErro);
         }
 
         public class EnderecoDtoDados : IEnumerable<object[]>
@@ -63,7 +66,6 @@ namespace VemDoBem.Testes.Unit.Entidades
                 yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = null, Municipio = "Teste" } };
                 yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = "SC", Municipio = null } };
             }
-
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
 

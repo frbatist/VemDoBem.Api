@@ -5,17 +5,17 @@ namespace VemDoBem.Domain.ObjetosDeValor
 {
     public class Endereco 
     {
-        const string MensagemErro = "Endereço inválido: " +
-            "Cep: {0}, " +
-            "Rua: {1}, " +
-            "Uf: {2}, " +
-            "Município: {3}.";
-
         public string Cep { get; set; }
         public string Rua { get; set; }
         public short Numero { get; set; }
         public string Uf { get; set; }
         public string Municipio { get; set; }
+
+        const string MensagemErro = "Endereço inválido: " +
+            "Cep: {0}, " +
+            "Rua: {1}, " +
+            "Uf: {2}, " +
+            "Município: {3}.";
 
         public Endereco(EnderecoDto enderecoDto)
         {
