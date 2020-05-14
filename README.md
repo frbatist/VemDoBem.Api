@@ -13,7 +13,7 @@ No momento estão em desenvolvimento as seguintes funcionalidades:
 
 Segue o mapeamento inicial das entidades e relacionamentos (os atributos das entidades, poderão ser visualizadas no código): 
 
-![Alt](Diagramas/MER_base.svg)
+![Alt](Diagramas/MER_base.drawio.svg)
 
 - Um usuário pode criar uma nova instituição, ou se associar como voluntário de alguma existente;
 - Um usuário pode se inscrever à um evento cadastrado por uma instituição existente;
