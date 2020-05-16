@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VemDoBem.Api\VemDoBem.Api.csproj" />
     <ProjectReference Include="..\VemDoBem.Domain\VemDoBem.Domain.csproj" />
+    <ProjectReference Include="..\VemDoBem.Infra\VemDoBem.Infra.csproj" />
   </ItemGroup>
 
 </Project>
