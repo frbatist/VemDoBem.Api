@@ -31,7 +31,6 @@ namespace VemDoBem.Testes.Unit.Entidades
             var endereco = new Endereco(enderecoDto);
 
             //Assert
-
             endereco.Cep.Should().Be(cep);
             endereco.Rua.Should().Be(rua);
             endereco.Uf.Should().Be(uf);
