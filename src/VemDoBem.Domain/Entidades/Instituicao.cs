@@ -21,6 +21,7 @@ namespace VemDoBem.Domain.Entidades
             Descricao = dto.Descricao;
             Endereco = dto.Endereco;
             IdUsuarioResponsavel = dto.IdUsuarioResponsavel;
+            _atividadesDesenvolvidas = dto.AtividadesDesenvolvidas;
         }
     }
 }
