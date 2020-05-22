@@ -14,10 +14,6 @@ No momento estão em desenvolvimento as seguintes funcionalidades:
 - Sistema de comunicação entre instituição e voluntário;
 - Registro e galeria de fotos em eventos realizados.
 
-Segue o mapeamento inicial das entidades e relacionamentos (os atributos das entidades, poderão ser visualizadas no código): 
+# Documentação
 
-![Alt](Diagramas/MER_base.drawio.svg)
-
-- Um usuário pode criar uma nova instituição, ou se associar como voluntário de alguma existente;
-- Um usuário pode se inscrever à um evento cadastrado por uma instituição existente;
-- O sistema de comunicação irá servir para que insitituição e voluntários se comuniquem, e também para retorno (a ser realizado pelas duas partes) sobre trabalhos realizados em eventos realizados, esses retornos podem ser públicos ou privádos.
+Você pode encontrar a documentão de desenvovilmento na sessão apropriada: [Documentação](https://github.com/frbatist/VemDoBem.Api/tree/master/Documentacao/)  
