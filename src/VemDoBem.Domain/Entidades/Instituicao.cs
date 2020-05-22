@@ -17,7 +17,10 @@ namespace VemDoBem.Domain.Entidades
 
         public Instituicao(InstituicaoDto dto)
         {
-
+            Nome = dto.Nome;
+            Descricao = dto.Descricao;
+            Endereco = dto.Endereco;
+            IdUsuarioResponsavel = dto.IdUsuarioResponsavel;
         }
     }
 }
