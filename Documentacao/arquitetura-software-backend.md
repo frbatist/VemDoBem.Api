@@ -6,6 +6,9 @@ Será uma api monolitica utilizando um modelo de camadas baseado no modelo de do
 - Infra: Código de infraestrutura, para interagir com frameworks, apis e libs externas, criando abstrações onde necessário para utilizar nas demais camadas por meio de injeção dependencia;
 - Api, camada que fornece as apis rest, também é onde teremos as classes de serviço de aplicação quando necessário, essa camada vai cuidar do fluxo de execução, utilizar as interfaces e finalizar o fluxo, comitar propagar notificações para o front-end e etc;
 
-Segue um diagrama básico (consultar código para mais detalhes)
+Segue um diagrama básico (consultar código para mais detalhes):
+
+- Infra e Api enxergam domíno;
+- Domínio não enxerga nenhum só lógica de negocio de domínio e interfaces, até pode usar alguma coisa implementada na camada de infra, mas nesse caso a camada de infra, deve implementar uma interface da camada de domínio, assim o domínio consegue resolver via injeção de dependência.
 
 ![Alt](Diagramas/arquitetura-software-backend.drawio.png)
