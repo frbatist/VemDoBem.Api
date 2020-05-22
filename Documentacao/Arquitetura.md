@@ -9,5 +9,5 @@ A ideia é um sistema monolitico muito simples:
 
 Segue diagrama ilustrando o esquema:
 
-![Alt](Diagramas/arquitetura-solucao.drawio.svg)
+![Alt](Diagramas/arquitetura-solucao.drawio.png)
 
