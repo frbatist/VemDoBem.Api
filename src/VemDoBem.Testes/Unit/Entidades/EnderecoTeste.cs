@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using VemDoBem.Domain;
 using VemDoBem.Domain.Dtos;
 using VemDoBem.Domain.ObjetosDeValor;
 using Xunit;
@@ -39,31 +40,26 @@ namespace VemDoBem.Testes.Unit.Entidades
 
         [Theory]
         [ClassData(typeof(EnderecoDtoDados))]
-        public void Endereco_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos_obrigatorios(EnderecoDto enderecoDto)
+        public void Endereco_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos_obrigatorios(EnderecoDto enderecoDto, string mensagem)
         {
-            //Arrange
-            var mensagemErro = $"Endereço inválido: " +
-                    $"Cep: { enderecoDto.Cep ?? "*vazio*"}, " +
-                    $"Rua: { enderecoDto.Rua ?? "*vazio*"}, " +
-                    $"Uf: { enderecoDto.Uf ?? "*vazio*"}, " +
-                    $"Município: { enderecoDto.Municipio ?? "*vazio*"}.";
-
             //Act
             Action act = () => new Endereco(enderecoDto);
 
             //Assert
             act.Should().Throw<InvalidOperationException>()                
-                .WithMessage(mensagemErro);
+                .WithMessage(mensagem);
         }
 
         public class EnderecoDtoDados : IEnumerable<object[]>
-        {
+        {            
             public IEnumerator<object[]> GetEnumerator()
             {
-                yield return new object[] { new EnderecoDto { Cep = null, Rua = "teste", Uf = "SC", Municipio = "Teste" } };
-                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = null, Uf = "SC", Municipio = "Teste" } };
-                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = null, Municipio = "Teste" } };
-                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = "SC", Municipio = null } };
+                var mensagemErroCompleta = $"{Resources.CepVazio} | {Resources.RuaVazia} | {Resources.UfVazio} | {Resources.MunicipioVazio}";
+                yield return new object[] { new EnderecoDto { Cep = null, Rua = "teste", Uf = "SC", Municipio = "Teste" }, Resources.CepVazio };
+                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = null, Uf = "SC", Municipio = "Teste" }, Resources.RuaVazia };
+                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = null, Municipio = "Teste" }, Resources.UfVazio };
+                yield return new object[] { new EnderecoDto { Cep = "88333000", Rua = "teste", Uf = "SC", Municipio = null }, Resources.MunicipioVazio };
+                yield return new object[] { new EnderecoDto { Cep = null, Rua = null, Uf = null, Municipio = null }, mensagemErroCompleta };
             }
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }

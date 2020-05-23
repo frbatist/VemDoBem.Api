@@ -7,7 +7,7 @@ namespace VemDoBem.Domain.ObjetosDeValor
     {
         public string Cep { get; set; }
         public string Rua { get; set; }
-        public short Numero { get; set; }
+        public short? Numero { get; set; }
         public string Uf { get; set; }
         public string Municipio { get; set; }
 
@@ -19,18 +19,13 @@ namespace VemDoBem.Domain.ObjetosDeValor
 
         public Endereco(EnderecoDto enderecoDto)
         {
-            if (EnderecoInvalido(enderecoDto))
-                throw new InvalidOperationException(string.Format(MensagemErro, enderecoDto.Cep ?? "*vazio*", enderecoDto.Rua ?? "*vazio*", enderecoDto.Uf ?? "*vazio*", enderecoDto.Municipio ?? "*vazio*"));
+            if (!enderecoDto.Validar())
+                throw new InvalidOperationException(enderecoDto.MensagemErroValidacao);
             Cep = enderecoDto.Cep;
             Rua = enderecoDto.Rua;
             Numero = enderecoDto.Numero;
             Uf = enderecoDto.Uf;
             Municipio = enderecoDto.Municipio;
-        }
-
-        private bool EnderecoInvalido(EnderecoDto enderecoDto)
-        {
-            return string.IsNullOrEmpty(enderecoDto.Cep) || string.IsNullOrEmpty(enderecoDto.Rua) || string.IsNullOrEmpty(enderecoDto.Uf) || string.IsNullOrEmpty(enderecoDto.Municipio);
         }
     }
 }
