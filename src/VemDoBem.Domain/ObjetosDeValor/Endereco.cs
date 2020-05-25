@@ -11,16 +11,9 @@ namespace VemDoBem.Domain.ObjetosDeValor
         public string Uf { get; set; }
         public string Municipio { get; set; }
 
-        const string MensagemErro = "Endereço inválido: " +
-            "Cep: {0}, " +
-            "Rua: {1}, " +
-            "Uf: {2}, " +
-            "Município: {3}.";
-
         public Endereco(EnderecoDto enderecoDto)
         {
-            if (!enderecoDto.Validar())
-                throw new InvalidOperationException(enderecoDto.MensagemErroValidacao);
+            enderecoDto.ValidarELancarExcessao();                
             Cep = enderecoDto.Cep;
             Rua = enderecoDto.Rua;
             Numero = enderecoDto.Numero;

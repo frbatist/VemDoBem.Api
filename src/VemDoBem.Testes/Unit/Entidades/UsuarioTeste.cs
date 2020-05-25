@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using VemDoBem.Domain;
 using VemDoBem.Domain.Dtos;
 using VemDoBem.Domain.Entidades;
 using VemDoBem.Domain.ObjetosDeValor;
@@ -17,7 +18,7 @@ namespace VemDoBem.Testes.Unit.Entidades
             //Arrange
             var nome = "Francisco Trinaldo";
             var email = "massaranduba@bol.com.br";
-            var senha = "ahjfs4f54asd=";
+            var senha = "Ahjfs4f54asd=";
             var foto = new byte[]
             {
                0x01, 0x01, 0x06, 0x00, 0x00, 0x00, 0x3d, 0x1d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -47,21 +48,14 @@ namespace VemDoBem.Testes.Unit.Entidades
 
         [Theory]
         [ClassData(typeof(UsuarioDtoDados))]
-        public void Usuario_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos_obrigatorios(UsuarioDto usuarioDto)
+        public void Usuario_deve_lancar_excessao_caso_não_seja_informado_algum_dos_campos_obrigatorios(UsuarioDto usuarioDto, string mensagem)
         { 
-            //Arrange
-            var mensagemErro = $"Usuário inválido: " +
-                $"Mome: { usuarioDto.Nome ?? "*vazio*"}, " +
-                $"Email: { usuarioDto.Email ?? "*vazio*"}, " +
-                $"Senha: { usuarioDto.Senha ?? "*vazio*"}, " +
-                $"Endereco: { usuarioDto.Endereco?.Cep ?? "*vazio*" }.";
-
             //Act
             Action act = () => new Usuario(usuarioDto);
 
             //Assert
             act.Should().Throw<InvalidOperationException>()
-                .WithMessage(mensagemErro);
+                .WithMessage(mensagem);
 
         }
 
@@ -77,10 +71,17 @@ namespace VemDoBem.Testes.Unit.Entidades
         {
             public IEnumerator<object[]> GetEnumerator()
             {
-                yield return new object[] { new UsuarioDto { Nome = null, Email = "teste@teste.com", Senha = "asdfhjs==!!", Endereco = EnderecoPadrao } };
-                yield return new object[] { new UsuarioDto { Nome = "Jagunço", Email = null, Senha = "asdfhjs==!!", Endereco = EnderecoPadrao } };
-                yield return new object[] { new UsuarioDto { Nome = "Jagunço", Email = "teste@teste.com", Senha = null, Endereco = EnderecoPadrao } };
-                yield return new object[] { new UsuarioDto { Nome = "Jagunço", Email = "teste@teste.com", Senha = "asdfhjs==!!", Endereco = null } };
+                var nomeTamanhoInvalido = new String('a', 81);
+                var senhaValida = "Ab9iu3wer12@";
+
+                yield return new object[] { new UsuarioDto { Nome = null, Email = "teste@teste.com", Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.NomeUsuarioVazio };
+                yield return new object[] { new UsuarioDto { Nome = "a", Email = "teste@teste.com", Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.NomeUsuarioMenorQuePermitido };
+                yield return new object[] { new UsuarioDto { Nome = nomeTamanhoInvalido, Email = "teste@teste.com", Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.NomeUsuarioMaiorQuePermitido };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = null, Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.EmailUsuarioVazio };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "adfjahjsdaaaaaa", Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.EmailInvalido };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = null, Endereco = EnderecoPadrao }, Resources.SenhaUsuarioVazia };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = "aiaiai", Endereco = EnderecoPadrao }, Resources.SenhaUsuarioInvalida };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = senhaValida, Endereco = null }, Resources.EnderecoUsuarioVazio };
             }
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }

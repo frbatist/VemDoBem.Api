@@ -120,16 +120,40 @@
   <data name="CepVazio" xml:space="preserve">
     <value>O cep do endereço deve ser informado.</value>
   </data>
+  <data name="EmailInvalido" xml:space="preserve">
+    <value>O email deve ser informado em um formato válido.</value>
+  </data>
+  <data name="EmailUsuarioVazio" xml:space="preserve">
+    <value>O email do usuário deve ser informado.</value>
+  </data>
+  <data name="EnderecoUsuarioVazio" xml:space="preserve">
+    <value>O endereço deve ser informado.</value>
+  </data>
   <data name="MunicipioVazio" xml:space="preserve">
-    <value>O município do endereço deve ser preenchido.</value>
+    <value>O município do endereço deve ser informado.</value>
+  </data>
+  <data name="NomeUsuarioMaiorQuePermitido" xml:space="preserve">
+    <value>O nome do usuário não pode exceder os 80 carcteres.</value>
+  </data>
+  <data name="NomeUsuarioMenorQuePermitido" xml:space="preserve">
+    <value>O nome de usuário deve possuir o mínimo de 10 caracteres. </value>
+  </data>
+  <data name="NomeUsuarioVazio" xml:space="preserve">
+    <value>O nome do usuário deve ser informado.</value>
   </data>
   <data name="RuaVazia" xml:space="preserve">
     <value>A rua do endereço deve ser informada.</value>
+  </data>
+  <data name="SenhaUsuarioInvalida" xml:space="preserve">
+    <value>A senha deve conter no mínimo 8 caracteres, contendo maiúsculas, minúsculas numéricos e caracteres especiais.</value>
+  </data>
+  <data name="SenhaUsuarioVazia" xml:space="preserve">
+    <value>A senha deve ser informada.</value>
   </data>
   <data name="TamanhoDoCepInválido" xml:space="preserve">
     <value>O cep deve conter exatamento 8 caracteres.</value>
   </data>
   <data name="UfVazio" xml:space="preserve">
-    <value>O Estado do endereço deve ser preenchido.</value>
+    <value>O Estado do endereço deve ser informado.</value>
   </data>
 </root>

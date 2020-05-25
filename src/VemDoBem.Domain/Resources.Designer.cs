@@ -70,11 +70,65 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O município do endereço deve ser preenchido..
+        ///   Looks up a localized string similar to O email deve ser informado em um formato válido..
+        /// </summary>
+        public static string EmailInvalido {
+            get {
+                return ResourceManager.GetString("EmailInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O email do usuário deve ser informado..
+        /// </summary>
+        public static string EmailUsuarioVazio {
+            get {
+                return ResourceManager.GetString("EmailUsuarioVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O endereço deve ser informado..
+        /// </summary>
+        public static string EnderecoUsuarioVazio {
+            get {
+                return ResourceManager.GetString("EnderecoUsuarioVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O município do endereço deve ser informado..
         /// </summary>
         public static string MunicipioVazio {
             get {
                 return ResourceManager.GetString("MunicipioVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome do usuário não pode exceder os 80 carcteres..
+        /// </summary>
+        public static string NomeUsuarioMaiorQuePermitido {
+            get {
+                return ResourceManager.GetString("NomeUsuarioMaiorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome de usuário deve possuir o mínimo de 10 caracteres. .
+        /// </summary>
+        public static string NomeUsuarioMenorQuePermitido {
+            get {
+                return ResourceManager.GetString("NomeUsuarioMenorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome do usuário deve ser informado..
+        /// </summary>
+        public static string NomeUsuarioVazio {
+            get {
+                return ResourceManager.GetString("NomeUsuarioVazio", resourceCulture);
             }
         }
         
@@ -88,6 +142,24 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A senha deve conter no mínimo 8 caracteres, contendo maiúsculas, minúsculas numéricos e caracteres especiais..
+        /// </summary>
+        public static string SenhaUsuarioInvalida {
+            get {
+                return ResourceManager.GetString("SenhaUsuarioInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A senha deve ser informada..
+        /// </summary>
+        public static string SenhaUsuarioVazia {
+            get {
+                return ResourceManager.GetString("SenhaUsuarioVazia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O cep deve conter exatamento 8 caracteres..
         /// </summary>
         public static string TamanhoDoCepInválido {
@@ -97,7 +169,7 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O Estado do endereço deve ser preenchido..
+        ///   Looks up a localized string similar to O Estado do endereço deve ser informado..
         /// </summary>
         public static string UfVazio {
             get {

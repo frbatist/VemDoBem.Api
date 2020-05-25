@@ -15,14 +15,4 @@ namespace VemDoBem.Domain.Dtos
             RuleFor(d => d.Municipio).NotEmpty().WithMessage(Resources.MunicipioVazio);
         }
     }
-
-    public static class ValidacaoEnderecoExtension
-    {
-        public static bool Validar(this EnderecoDto dto)
-        {
-            var validacao = new ValidacaoEndereco();
-            dto.ResultadoValidacao = validacao.Validate(dto);
-            return dto.ResultadoValidacao.IsValid;
-        }
-    }
 }
