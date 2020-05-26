@@ -120,17 +120,38 @@
   <data name="CepVazio" xml:space="preserve">
     <value>O cep do endereço deve ser informado.</value>
   </data>
+  <data name="DescricaoInstituicaoMaiorQuePermitido" xml:space="preserve">
+    <value>A descrição da instituição não pode exceder os 250 carcteres.</value>
+  </data>
+  <data name="DescricaoInstituicaoMenorQuePermitido" xml:space="preserve">
+    <value>A descrição da instituição deve possuir o mínimo de 10 caracteres.</value>
+  </data>
+  <data name="DescricaoInstituicaoVazio" xml:space="preserve">
+    <value>A descrição da instituição deve ser informada.</value>
+  </data>
   <data name="EmailInvalido" xml:space="preserve">
     <value>O email deve ser informado em um formato válido.</value>
   </data>
   <data name="EmailUsuarioVazio" xml:space="preserve">
     <value>O email do usuário deve ser informado.</value>
   </data>
-  <data name="EnderecoUsuarioVazio" xml:space="preserve">
+  <data name="EnderecoVazio" xml:space="preserve">
     <value>O endereço deve ser informado.</value>
+  </data>
+  <data name="IdUsuarioResponsavelVazio" xml:space="preserve">
+    <value>O usuário responsável deve ser preenchido.</value>
   </data>
   <data name="MunicipioVazio" xml:space="preserve">
     <value>O município do endereço deve ser informado.</value>
+  </data>
+  <data name="NomeInstituicaoMaiorQuePermitido" xml:space="preserve">
+    <value>O nome da instituição não pode exceder os 120 carcteres.</value>
+  </data>
+  <data name="NomeInstituicaoMenorQuePermitido" xml:space="preserve">
+    <value>O nome da instituição deve possuir o mínimo de 10 caracteres.</value>
+  </data>
+  <data name="NomeInstituicaoVazio" xml:space="preserve">
+    <value>O nome da instituição deve ser informado.</value>
   </data>
   <data name="NomeUsuarioMaiorQuePermitido" xml:space="preserve">
     <value>O nome do usuário não pode exceder os 80 carcteres.</value>

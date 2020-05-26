@@ -25,7 +25,7 @@ namespace VemDoBem.Domain.Dtos
                 .Must(ValidarSenha).WithMessage(Resources.SenhaUsuarioInvalida).Unless(d => string.IsNullOrEmpty(d.Senha));
 
             RuleFor(d => d.Endereco)
-                .NotNull().WithMessage(Resources.EnderecoUsuarioVazio);
+                .NotNull().WithMessage(Resources.EnderecoVazio);
         }
 
         private bool ValidarSenha(string senha)

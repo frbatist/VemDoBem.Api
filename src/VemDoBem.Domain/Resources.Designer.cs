@@ -70,6 +70,33 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A descrição da instituição não pode exceder os 250 carcteres..
+        /// </summary>
+        public static string DescricaoInstituicaoMaiorQuePermitido {
+            get {
+                return ResourceManager.GetString("DescricaoInstituicaoMaiorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A descrição da instituição deve possuir o mínimo de 10 caracteres..
+        /// </summary>
+        public static string DescricaoInstituicaoMenorQuePermitido {
+            get {
+                return ResourceManager.GetString("DescricaoInstituicaoMenorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A descrição da instituição deve ser informada..
+        /// </summary>
+        public static string DescricaoInstituicaoVazio {
+            get {
+                return ResourceManager.GetString("DescricaoInstituicaoVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O email deve ser informado em um formato válido..
         /// </summary>
         public static string EmailInvalido {
@@ -90,9 +117,18 @@ namespace VemDoBem.Domain {
         /// <summary>
         ///   Looks up a localized string similar to O endereço deve ser informado..
         /// </summary>
-        public static string EnderecoUsuarioVazio {
+        public static string EnderecoVazio {
             get {
-                return ResourceManager.GetString("EnderecoUsuarioVazio", resourceCulture);
+                return ResourceManager.GetString("EnderecoVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O usuário responsável deve ser preenchido..
+        /// </summary>
+        public static string IdUsuarioResponsavelVazio {
+            get {
+                return ResourceManager.GetString("IdUsuarioResponsavelVazio", resourceCulture);
             }
         }
         
@@ -102,6 +138,33 @@ namespace VemDoBem.Domain {
         public static string MunicipioVazio {
             get {
                 return ResourceManager.GetString("MunicipioVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome da instituição não pode exceder os 120 carcteres..
+        /// </summary>
+        public static string NomeInstituicaoMaiorQuePermitido {
+            get {
+                return ResourceManager.GetString("NomeInstituicaoMaiorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome da instituição deve possuir o mínimo de 10 caracteres..
+        /// </summary>
+        public static string NomeInstituicaoMenorQuePermitido {
+            get {
+                return ResourceManager.GetString("NomeInstituicaoMenorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O nome da instituição deve ser informado..
+        /// </summary>
+        public static string NomeInstituicaoVazio {
+            get {
+                return ResourceManager.GetString("NomeInstituicaoVazio", resourceCulture);
             }
         }
         

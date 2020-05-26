@@ -81,7 +81,7 @@ namespace VemDoBem.Testes.Unit.Entidades
                 yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "adfjahjsdaaaaaa", Senha = senhaValida, Endereco = EnderecoPadrao }, Resources.EmailInvalido };
                 yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = null, Endereco = EnderecoPadrao }, Resources.SenhaUsuarioVazia };
                 yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = "aiaiai", Endereco = EnderecoPadrao }, Resources.SenhaUsuarioInvalida };
-                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = senhaValida, Endereco = null }, Resources.EnderecoUsuarioVazio };
+                yield return new object[] { new UsuarioDto { Nome = "Jagunço legal", Email = "teste@teste.com", Senha = senhaValida, Endereco = null }, Resources.EnderecoVazio };
             }
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }

@@ -4,7 +4,7 @@ using VemDoBem.Domain.ObjetosDeValor;
 
 namespace VemDoBem.Domain.Dtos
 {
-    public class InstituicaoDto
+    public class InstituicaoDto : DtoBase
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }
