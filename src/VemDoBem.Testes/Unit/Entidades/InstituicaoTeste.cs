@@ -17,7 +17,7 @@ namespace VemDoBem.Testes.Unit.Entidades
         public void Instituicao_deve_construir_uma_instituicao_valida()
         {
             //Arrange
-            var nome = "acapra";
+            var nome = "acapra dos animais";
             var descricao = "ong que cuida de animais abandonados";
             var idUsuario = 10;
             var instituicaoDto = new InstituicaoDto
@@ -42,7 +42,7 @@ namespace VemDoBem.Testes.Unit.Entidades
         public void Instituicao_deve_construir_uma_instituicao_valida_com_lista_de_atividades_desenvolvidas()
         {
             //Arrange
-            var nome = "acapra";
+            var nome = "acapra dos animais";
             var descricao = "ong que cuida de animais abandonados";
             var idUsuario = 10;
             var atividade01 = "Atendimento";
