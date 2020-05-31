@@ -1,4 +1,6 @@
-﻿using VemDoBem.Domain.ObjetosDeValor;
+﻿using System.Collections.Generic;
+using VemDoBem.Domain.Entidades;
+using VemDoBem.Domain.ObjetosDeValor;
 
 namespace VemDoBem.Domain.Dtos
 {
@@ -8,6 +10,7 @@ namespace VemDoBem.Domain.Dtos
         public string Email { get; set; }
         public string Senha { get; set; }
         public Endereco Endereco { get; set; }
-        public byte[] Foto { get; set; }        
+        public byte[] Foto { get; set; }
+        public List<Experiencia> Experiencias { get; set; }
     }
 }

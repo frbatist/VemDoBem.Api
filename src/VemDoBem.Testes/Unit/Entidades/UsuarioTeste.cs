@@ -24,6 +24,10 @@ namespace VemDoBem.Testes.Unit.Entidades
                0x01, 0x01, 0x06, 0x00, 0x00, 0x00, 0x3d, 0x1d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                0x00, 0x00
             };
+            var experiencias = new List<Experiencia>
+            {
+                new Experiencia(new ExperienciaDto { Descricao = "nova experiencia bem legal", TipoTrabalho = new TipoTrabalho("Tipo trabalho novo") })
+            };
 
             var usuarioDto = new UsuarioDto
             {
@@ -31,7 +35,8 @@ namespace VemDoBem.Testes.Unit.Entidades
                 Email = email,
                 Senha = senha,
                 Endereco = EnderecoPadrao,
-                Foto = foto
+                Foto = foto,
+                Experiencias = experiencias
             };
 
             //Act
@@ -44,6 +49,7 @@ namespace VemDoBem.Testes.Unit.Entidades
             usuario.Endereco.Should().BeEquivalentTo(EnderecoPadrao);
             usuario.Foto.Length.Should().Be(foto.Length);
             usuario.Foto.Should().BeEquivalentTo(foto);
+            usuario.Experiencias.Should().HaveCount(1);
         }
 
         [Theory]
