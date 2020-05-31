@@ -70,6 +70,33 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A descrição da experência não pode exceder os 250 carcteres..
+        /// </summary>
+        public static string DescricaoExperienciaMaiorQuePermitido {
+            get {
+                return ResourceManager.GetString("DescricaoExperienciaMaiorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A descrição da experência deve possuir o mínimo de 10 caracteres..
+        /// </summary>
+        public static string DescricaoExperienciaMenorQuePermitido {
+            get {
+                return ResourceManager.GetString("DescricaoExperienciaMenorQuePermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A descrição da experiência deve ser informada..
+        /// </summary>
+        public static string DescricaoExperienciaVazia {
+            get {
+                return ResourceManager.GetString("DescricaoExperienciaVazia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A descrição da instituição não pode exceder os 250 carcteres..
         /// </summary>
         public static string DescricaoInstituicaoMaiorQuePermitido {
@@ -228,6 +255,15 @@ namespace VemDoBem.Domain {
         public static string TamanhoDoCepInválido {
             get {
                 return ResourceManager.GetString("TamanhoDoCepInválido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O tipo de trabalho deve ser informado..
+        /// </summary>
+        public static string TipoDeTrabalhoVazio {
+            get {
+                return ResourceManager.GetString("TipoDeTrabalhoVazio", resourceCulture);
             }
         }
         

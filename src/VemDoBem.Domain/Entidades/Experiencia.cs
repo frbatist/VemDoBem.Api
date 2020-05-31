@@ -9,6 +9,7 @@ namespace VemDoBem.Domain.Entidades
 
         public Experiencia(ExperienciaDto dto)
         {
+            dto.ValidarELancarExcessao();
             Descricao = dto.Descricao;
             TipoTrabalho = dto.TipoTrabalho;
         }

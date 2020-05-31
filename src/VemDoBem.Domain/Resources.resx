@@ -120,6 +120,15 @@
   <data name="CepVazio" xml:space="preserve">
     <value>O cep do endereço deve ser informado.</value>
   </data>
+  <data name="DescricaoExperienciaMaiorQuePermitido" xml:space="preserve">
+    <value>A descrição da experência não pode exceder os 250 carcteres.</value>
+  </data>
+  <data name="DescricaoExperienciaMenorQuePermitido" xml:space="preserve">
+    <value>A descrição da experência deve possuir o mínimo de 10 caracteres.</value>
+  </data>
+  <data name="DescricaoExperienciaVazia" xml:space="preserve">
+    <value>A descrição da experiência deve ser informada.</value>
+  </data>
   <data name="DescricaoInstituicaoMaiorQuePermitido" xml:space="preserve">
     <value>A descrição da instituição não pode exceder os 250 carcteres.</value>
   </data>
@@ -173,6 +182,9 @@
   </data>
   <data name="TamanhoDoCepInválido" xml:space="preserve">
     <value>O cep deve conter exatamento 8 caracteres.</value>
+  </data>
+  <data name="TipoDeTrabalhoVazio" xml:space="preserve">
+    <value>O tipo de trabalho deve ser informado.</value>
   </data>
   <data name="UfVazio" xml:space="preserve">
     <value>O Estado do endereço deve ser informado.</value>
