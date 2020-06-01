@@ -6,6 +6,7 @@ using System.Linq;
 using VemDoBem.Domain;
 using VemDoBem.Domain.Dtos;
 using VemDoBem.Domain.Entidades;
+using VemDoBem.Domain.Entidades.Builders;
 using VemDoBem.Domain.ObjetosDeValor;
 using Xunit;
 
@@ -20,14 +21,14 @@ namespace VemDoBem.Testes.Unit.Entidades
             var nome = "acapra dos animais";
             var descricao = "ong que cuida de animais abandonados";
             var idUsuario = 10;
-            var instituicaoDto = new InstituicaoDto
-            {
-                Nome = nome,
-                Descricao = descricao,
-                Endereco = EnderecoPadrao,
-                IdUsuarioResponsavel = idUsuario
-            };
+            var endereco = new EnderecoBuilder().Construir();
 
+            var instituicaoDto = new InstituicaoBuilder()
+                .ComNome(nome)
+                .ComDescricao(descricao)
+                .ComIdUsuarioResponsavel(idUsuario)
+                .ComEndereco(endereco)
+                .ConstruirDto();
             //Act
             var instituicao = new Instituicao(instituicaoDto);
 
@@ -35,7 +36,7 @@ namespace VemDoBem.Testes.Unit.Entidades
             instituicao.Nome.Should().Be(nome);
             instituicao.Descricao.Should().Be(descricao);
             instituicao.IdUsuarioResponsavel.Should().Be(idUsuario);
-            instituicao.Endereco.Should().BeEquivalentTo(EnderecoPadrao);
+            instituicao.Endereco.Should().BeEquivalentTo(endereco);
         }
 
         [Fact]
