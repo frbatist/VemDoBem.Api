@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using VemDoBem.Domain.Dtos.Validacao;
 
 namespace VemDoBem.Domain.Dtos
