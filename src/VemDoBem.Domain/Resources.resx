@@ -147,8 +147,14 @@
   <data name="EnderecoVazio" xml:space="preserve">
     <value>O endereço deve ser informado.</value>
   </data>
+  <data name="IdInstituicaoVazio" xml:space="preserve">
+    <value>A instituição deve ser informada.</value>
+  </data>
   <data name="IdUsuarioResponsavelVazio" xml:space="preserve">
     <value>O usuário responsável deve ser preenchido.</value>
+  </data>
+  <data name="IdUsuarioVazio" xml:space="preserve">
+    <value>O usuário deve ser informado.</value>
   </data>
   <data name="MunicipioVazio" xml:space="preserve">
     <value>O município do endereço deve ser informado.</value>

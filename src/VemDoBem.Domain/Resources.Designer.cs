@@ -151,11 +151,29 @@ namespace VemDoBem.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A instituição deve ser informada..
+        /// </summary>
+        public static string IdInstituicaoVazio {
+            get {
+                return ResourceManager.GetString("IdInstituicaoVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O usuário responsável deve ser preenchido..
         /// </summary>
         public static string IdUsuarioResponsavelVazio {
             get {
                 return ResourceManager.GetString("IdUsuarioResponsavelVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O usuário deve ser informado..
+        /// </summary>
+        public static string IdUsuarioVazio {
+            get {
+                return ResourceManager.GetString("IdUsuarioVazio", resourceCulture);
             }
         }
         

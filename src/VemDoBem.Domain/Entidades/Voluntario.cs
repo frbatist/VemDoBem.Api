@@ -15,6 +15,7 @@ namespace VemDoBem.Domain.Entidades
 
         public Voluntario(VoluntarioDto voluntarioDto)
         {
+            voluntarioDto.ValidarELancarExcessao();
             IdUsuario = voluntarioDto.IdUsuario;
             IdInstituicao = voluntarioDto.IdInstituicao;
             _preferenciasDeTrabalho = voluntarioDto.PreferenciasDeTrabalho;
