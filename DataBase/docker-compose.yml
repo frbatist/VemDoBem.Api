@@ -1,0 +1,35 @@
+version: "3.4"
+
+services:
+  postgres_database:
+    image: postgres:latest
+    ports:
+      - "15432:5432"
+    restart: always
+    volumes:
+      - ./db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: vemdobem
+      POSTGRES_PASSWORD: vemdobem2020
+      POSTGRES_DB: vemdobem
+    networks:
+      - postgres-compose-network
+      
+  pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "frbatist@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres_database
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
+    
+volumes:
+  db_volume:
