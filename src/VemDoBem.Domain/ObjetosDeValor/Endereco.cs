@@ -11,6 +11,8 @@ namespace VemDoBem.Domain.ObjetosDeValor
         public string Uf { get; set; }
         public string Municipio { get; set; }
 
+        protected Endereco() { }
+
         public Endereco(EnderecoDto enderecoDto)
         {
             enderecoDto.ValidarELancarExcessao();                

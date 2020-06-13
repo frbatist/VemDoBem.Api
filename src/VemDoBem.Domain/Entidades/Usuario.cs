@@ -7,10 +7,11 @@ namespace VemDoBem.Domain.Entidades
 {
     public class Usuario : IdentityUser<long>
     {
-        public string Nome { get; private set; }        
+        public string Nome { get; private set; }
         public Endereco Endereco { get; private set; }
         public byte[] Foto { get; private set; }
 
+        protected Usuario() {}
         public Usuario(UsuarioDto usuarioDto)
         {
             usuarioDto.ValidarELancarExcessao();

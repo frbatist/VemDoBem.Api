@@ -15,6 +15,8 @@ namespace VemDoBem.Domain.Entidades
         
         private List<TipoTrabalho> _atividadesDesenvolvidas = new List<TipoTrabalho>();
 
+        protected Instituicao() { }
+
         public Instituicao(InstituicaoDto dto)
         {
             dto.ValidarELancarExcessao();

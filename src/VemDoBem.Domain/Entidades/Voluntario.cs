@@ -10,5 +10,7 @@ namespace VemDoBem.Domain.Entidades
 
         private List<Experiencia> _experiencias = new List<Experiencia>();
         private List<TipoTrabalho> _preferenciasDeTrabalho = new List<TipoTrabalho>();
+
+        protected Voluntario() { }
     }
 }

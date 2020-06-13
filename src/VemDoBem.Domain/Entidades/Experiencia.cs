@@ -3,5 +3,6 @@
     public class Experiencia : Entidade<short>
     {
         public string Descricao { get; set; }
+        protected Experiencia() { }
     }
 }
