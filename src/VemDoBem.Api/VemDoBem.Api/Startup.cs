@@ -64,21 +64,22 @@ namespace VemDoBem.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-
-            await ApplyMigrations(app);
+            }            
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            await ApplyMigrations(app);
         }
 
         private static async Task ApplyMigrations(IApplicationBuilder app)

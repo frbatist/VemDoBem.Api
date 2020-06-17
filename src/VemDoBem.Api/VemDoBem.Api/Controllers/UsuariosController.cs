@@ -5,15 +5,20 @@ using System.Threading.Tasks;
 using VemDoBem.Domain.Dtos;
 using VemDoBem.Domain.Entidades;
 using VemDoBem.Api.Model;
+using Microsoft.EntityFrameworkCore;
+using VemDoBem.Infra.Data;
 
 namespace VemDoBem.Api.Controllers
 {
-    public class UsuariosController : ControllerBase
+    [Route("api/[controller]")]
+    public class UsuariosController : Controller
     {
         private readonly UserManager<Usuario> _userManager;
+        private readonly ContextoVemDoBem _context;
 
-        public UsuariosController(UserManager<Usuario> userManager)
+        public UsuariosController(UserManager<Usuario> userManager, ContextoVemDoBem context)
         {
+            _context = context;
             _userManager = userManager;
         }
 
@@ -33,6 +38,12 @@ namespace VemDoBem.Api.Controllers
             }
 
             return Ok(new RegisterResult { Successful = true });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await _context.Set<Usuario>().Select(d=>d.Nome).ToListAsync());
         }
     }
 }

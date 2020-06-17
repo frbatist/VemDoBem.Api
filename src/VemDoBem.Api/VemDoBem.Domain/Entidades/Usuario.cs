@@ -18,6 +18,7 @@ namespace VemDoBem.Domain.Entidades
 
             Nome = usuarioDto.Nome;
             Email = usuarioDto.Email;
+            UserName = usuarioDto.Email;
             PasswordHash = usuarioDto.Senha;
             Endereco = usuarioDto.Endereco;
             Foto = usuarioDto.Foto;

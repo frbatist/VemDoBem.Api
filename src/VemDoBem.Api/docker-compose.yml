@@ -7,7 +7,7 @@ services:
       - postgres_database
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: VemDoBem.Api/Dockerfile
     environment:
       DB_CONNECTION_STRING: "host=postgres_database;port=5432;database=vemdobem;username=vemdobem;password=vemdobem2020"
     networks:
