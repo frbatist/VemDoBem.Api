@@ -1,5 +1,4 @@
 # VemDoBem.Api
-[![Build Status](https://dev.azure.com/frbatist/O%20que%20vem%20do%20bem/_apis/build/status/O%20que%20vem%20do%20bem-Docker%20container-CI?branchName=develop)](https://dev.azure.com/frbatist/O%20que%20vem%20do%20bem/_build/latest?definitionId=17&branchName=develop)
 
 Repositorio com as operações básicas do projeto "O que vem do bem".
 
