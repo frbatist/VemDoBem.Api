@@ -9,6 +9,8 @@ namespace VemDoBem.Domain.Entidades
 
         const string MensagemErro = "Tipo de trabalho inválido. É necessário informar a descrição!";
 
+        protected TipoTrabalho() { }
+
         public TipoTrabalho(string descricao)
         {
             if (string.IsNullOrWhiteSpace(descricao))

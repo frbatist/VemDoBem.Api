@@ -1,5 +1,3 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
@@ -7,10 +5,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["VemDoBem.Api.csproj", ""]
-RUN dotnet restore "./VemDoBem.Api.csproj"
+COPY ["VemDoBem.Api/VemDoBem.Api.csproj", "VemDoBem.Api/"]
+COPY ["VemDoBem.Infra/VemDoBem.Infra.csproj", "VemDoBem.Infra/"]
+COPY ["VemDoBem.Domain/VemDoBem.Domain.csproj", "VemDoBem.Domain/"]
+RUN dotnet restore "VemDoBem.Api/VemDoBem.Api.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/VemDoBem.Api"
 RUN dotnet build "VemDoBem.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish

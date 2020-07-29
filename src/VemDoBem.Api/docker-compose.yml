@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+  vemdobem.api:
+    image: ${DOCKER_REGISTRY-}vemdobemapi
+    depends_on: 
+      - postgres_database
+    build:
+      context: .
+      dockerfile: VemDoBem.Api/Dockerfile
+    environment:
+      DB_CONNECTION_STRING: "host=postgres_database;port=5432;database=vemdobem;username=vemdobem;password=vemdobem2020"
+    networks:
+      - vemdobem-network
+
+  postgres_database:
+    image: postgres:latest
+    ports:
+      - "15432:5432"
+    restart: always
+    volumes:
+      - ./db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: vemdobem
+      POSTGRES_PASSWORD: vemdobem2020
+      POSTGRES_DB: vemdobem
+    networks:
+      - vemdobem-network
+      
+  pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "frbatist@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres_database
+    networks:
+      - vemdobem-network
+
+networks: 
+  vemdobem-network:
+    driver: bridge
+    
+volumes:
+  db_volume:
