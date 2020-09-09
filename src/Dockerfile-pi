@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["src/VemDoBem.Api/VemDoBem.Api.csproj", "VemDoBem.Api/"]
 COPY ["src/VemDoBem.Infra/VemDoBem.Infra.csproj", "VemDoBem.Infra/"]
 COPY ["src/VemDoBem.Domain/VemDoBem.Domain.csproj", "VemDoBem.Domain/"]
-RUN dotnet restore "src/VemDoBem.Api/VemDoBem.Api.csproj"
+RUN dotnet restore "VemDoBem.Api.csproj"
 COPY . .
 WORKDIR "/src/VemDoBem.Api"
 RUN dotnet build "VemDoBem.Api.csproj" -c Release -o /app/build
