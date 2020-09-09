@@ -22,14 +22,18 @@ jobs:
     - name: Build
       run: dotnet build src/VemDoBem.Api.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test src/VemDoBem.Api.sln --no-restore --verbosity normal
-    - name: Login to DockerHub
-      uses: docker/login-action@v1
+      run: dotnet test src/VemDoBem.Api.sln --no-restore --verbosity normal        
+    - name: Docker build (Debug)
+      uses: docker/build-push-action@v1
       with:
+        path: src
+        dockerfile: src/Dockerfile-pi
         username: ${{ secrets.DOCKER_HUB_USER_NAME }}
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }} 
-    - name: Build do container e push no docker hub
-      run: |
-        docker build . --file src/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest --platform linux/arm/v7
-        docker tag frbatist/vemdobem.api-arm32:latest frbatist/vemdobem.api-arm32:$(date +%s)
-        docker push frbatistvemdobem.api-arm32
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        repository: ${{ secrets.DOCKER_HUB_USER_NAME }}/vemdobem.api-arm32
+        build_args: QEMU=true
+        add_git_labels: true
+        tags: latest
+        tag_with_ref: false
+        tag_with_sha: false
+        push: true
