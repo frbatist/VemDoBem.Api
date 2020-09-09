@@ -20,11 +20,11 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore src/VemDoBem.Api/VemDoBem.Api.sln
+      run: dotnet restore src/VemDoBem.Api.sln
     - name: Build
-      run: dotnet build src/VemDoBem.Api/VemDoBem.Api.sln --configuration Release --no-restore
+      run: dotnet build src/VemDoBem.Api.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test src/VemDoBem.Api/VemDoBem.Api.sln --no-restore --verbosity normal
+      run: dotnet test src/VemDoBem.Api.sln --no-restore --verbosity normal
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -32,6 +32,6 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }} 
     - name: Build do container e push no docker hub
       run: |
-        docker build . --file src/VemDoBem.Api/VemDoBem.Api/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest
+        docker build . --file src/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest
         docker tag frbatist/vemdobem.api-arm32:latest frbatist/vemdobem.api-arm32:$(date +%s)
         docker push frbatistvemdobem.api-arm32
