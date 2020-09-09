@@ -9,9 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-    env:      
-      DOCKER_TARGET_PLATFORM: linux/arm/v7  
+    runs-on: ubuntu-latest    
 
     steps:
     - uses: actions/checkout@v2    
@@ -32,6 +30,6 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }} 
     - name: Build do container e push no docker hub
       run: |
-        docker build . --file src/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest
+        docker build . --file src/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest --platform linux/arm/v7
         docker tag frbatist/vemdobem.api-arm32:latest frbatist/vemdobem.api-arm32:$(date +%s)
         docker push frbatistvemdobem.api-arm32
