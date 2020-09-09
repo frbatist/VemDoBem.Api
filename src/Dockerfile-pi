@@ -5,9 +5,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster-arm32v7 AS build
 WORKDIR /src
-COPY ["VemDoBem.Api/VemDoBem.Api.csproj", "VemDoBem.Api/"]
-COPY ["VemDoBem.Infra/VemDoBem.Infra.csproj", "VemDoBem.Infra/"]
-COPY ["VemDoBem.Domain/VemDoBem.Domain.csproj", "VemDoBem.Domain/"]
+COPY ["src/VemDoBem.Api/VemDoBem.Api.csproj", "VemDoBem.Api/"]
+COPY ["src/VemDoBem.Infra/VemDoBem.Infra.csproj", "VemDoBem.Infra/"]
+COPY ["src/VemDoBem.Domain/VemDoBem.Domain.csproj", "VemDoBem.Domain/"]
 RUN dotnet restore "VemDoBem.Api/VemDoBem.Api.csproj" -p:RestoreUseSkipNonexistentTargets=false -nowarn:msb3202,nu1503
 COPY . .
 WORKDIR "/src/VemDoBem.Api"
