@@ -33,6 +33,6 @@ jobs:
       run: dotnet test src/VemDoBem.Api/VemDoBem.Api.sln --no-restore --verbosity normal
     - name: Build do container e push no docker hub
       run: |
-        docker build . --file src/VemDoBem.Api/VemDoBem.Api/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest
+        docker build . --file src/VemDoBem.Api/Dockerfile-pi --tag frbatist/vemdobem.api-arm32:latest
         docker tag frbatist/vemdobem.api-arm32:latest frbatist/vemdobem.api-arm32:$(date +%s)
         docker push frbatistvemdobem.api-arm32
